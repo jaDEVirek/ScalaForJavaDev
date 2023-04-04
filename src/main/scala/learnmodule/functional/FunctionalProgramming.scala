@@ -1,6 +1,8 @@
 package org.jadevirek
 package learnmodule.functional
 
+import java.util.Scanner
+
 object FunctionalProgramming extends App {
 
   // Scala is OO
@@ -131,5 +133,18 @@ object FunctionalProgramming extends App {
     "Jane" -> 327285 // ("Jane", 327285)
   )
 
+   def mainer(args: Array[String]): Unit = {
+    val sc = new Scanner(System.in)
+    while (sc.hasNextLine) {
+      val line = sc.nextLine
+      val tab = line.split(" ")
+      for (i <- 0 until tab.length) {
+        val x = tab(i)
+        if (x.nonEmpty) if (i == 0) System.out.print(x)
+        else System.out.print(x.substring(0, 1).toUpperCase + x.substring(1))
+      }
+      System.out.println()
+    }
+  }
 
 }
